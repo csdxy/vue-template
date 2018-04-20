@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { Carousel, CarouselItem } from 'element-ui'
 import App from './App'
 import router from './router'
 import store from './store'
@@ -6,6 +7,8 @@ import store from './store'
 import 'common/scss/index.scss'
 
 Vue.config.productionTip = false
+Vue.use(Carousel)
+Vue.use(CarouselItem)
 
 /* eslint-disable no-new */
 new Vue({

@@ -1,0 +1,8 @@
+body {
+  font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif; // Helvetica Neue这款字体以保证最新版本Mac用户的最佳体验，选择了Arial作为Win下默认英文字体及Mac的替代英文字体；中文字体方面首选了微软雅黑，然后选择了冬青黑体及黑体-简作为Mac上的替代方案；最后使用文泉驿微米黑兼顾了Linux系统。
+  -webkit-font-smoothing: antialiased; // 字体抗锯齿渲染
+  -moz-osx-font-smoothing: grayscale; // 字体抗锯齿渲染
+  color: #333;
+  background-color: #fff;
+  min-width: 1000px;
+}

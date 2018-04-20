@@ -1,0 +1,11 @@
+.el-carousel__indicator.is-active button{
+  width: 30px;
+}
+
+.el-carousel__button{
+  $width: 12px;
+  width: $width;
+  height: $width;
+  border-radius:$width;
+}
+

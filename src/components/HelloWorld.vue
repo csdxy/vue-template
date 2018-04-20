@@ -1,5 +1,6 @@
 <template>
   <div class='hello'>
+    <carousel></carousel>
     <h2>xml数据</h2>
     <ul v-for='item in xmlData' :key='item.id'>
       <li>{{item.name}}</li>
@@ -19,6 +20,7 @@
 import { getXmlData, getJsonpData } from 'api/data'
 import { ERR_OK } from 'api/config'
 import { mapGetters, mapMutations } from 'vuex'
+import Carousel from 'base/carousel/carousel'
 
 export default {
   name: 'HelloWorld',
@@ -65,6 +67,9 @@ export default {
       ]
       this.setData(data)
     }
+  },
+  components: {
+    Carousel
   }
 }
 </script>
