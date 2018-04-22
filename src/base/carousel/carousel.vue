@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-carousel
-    interval="5000"
+    :interval="5000"
     trigger="click"
     height="440px"
     arrow="never">
@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss">
 .el-carousel__item {
-  background-color: #d3dce6;
+  // background-color: #d3dce6;
   img {
     width: 100%;
     height: 100%;

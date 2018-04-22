@@ -1,0 +1,84 @@
+@import 'element-variables';
+
+body {
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font-weight: 400;
+  font-size: $--font-size-base;
+  color: $--color-black;
+  -webkit-font-smoothing: antialiased; // 字体抗锯齿渲染
+  -moz-osx-font-smoothing: grayscale; // 字体抗锯齿渲染
+  -webkit-tap-highlight-color: transparent;
+}
+
+blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+  margin: 0;
+  padding: 0;
+}
+address, cite, dfn, em, var {
+  font-style: normal;
+}
+code, kbd, pre, samp {
+  font-family: courier new, courier, monospace;
+}
+small {
+  font-size: #{$--font-size-base - 2px};
+}
+ol,ul {
+  list-style: none;
+}
+sup, sub {
+  font-size: #{$--font-size-base - 1px};
+}
+sup {
+  vertical-align: text-top;
+}
+sub {
+  vertical-align: text-bottom;
+}
+legend {
+  color: $--color-black;
+}
+fieldset,
+img {
+  border: 0;
+}
+button, input, select, textarea {
+  font-size: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+button {
+  border-radius: 0;
+}
+a {
+  color: $--color-primary;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
+  }
+  &:active {
+    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  color: $--color-text-regular;
+  font-weight: normal;
+}
+h1 {
+  font-size: #{$--font-size-base + 6px};
+}
+h2 {
+  font-size: #{$--font-size-base + 4px};
+}
+h3 {
+  font-size: #{$--font-size-base + 2px};
+}
+h4, h5, h6, p {
+  font-size: inherit;
+}
+p {
+  line-height: 1.8;
+}

@@ -1,7 +1,8 @@
 <template>
   <div class='hello'>
+    <navagation-bar></navagation-bar>
     <carousel></carousel>
-    <h2>xml数据</h2>
+    <!-- <h2>xml数据</h2>
     <ul v-for='item in xmlData' :key='item.id'>
       <li>{{item.name}}</li>
     </ul>
@@ -12,7 +13,7 @@
     <h2>store数据</h2>
     <ul v-for='item in data' :key='item.id'>
       <li>{{item.name}}</li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -21,6 +22,7 @@ import { getXmlData, getJsonpData } from 'api/data'
 import { ERR_OK } from 'api/config'
 import { mapGetters, mapMutations } from 'vuex'
 import Carousel from 'base/carousel/carousel'
+import NavagationBar from 'base/navigation-bar/navigation-bar'
 
 export default {
   name: 'HelloWorld',
@@ -69,14 +71,13 @@ export default {
     }
   },
   components: {
-    Carousel
+    Carousel,
+    NavagationBar
   }
 }
 </script>
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped lang='scss'>
-ul {
-  list-style: none;
-}
+
 </style>
