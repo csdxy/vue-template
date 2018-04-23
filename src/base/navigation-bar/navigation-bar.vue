@@ -1,12 +1,14 @@
 <template>
-  <div class="navigation-bar">
+  <div class="navigation-bar"
+  @mouseover="NavSheetFlag = true"
+  @mouseout="NavSheetFlag = false">
     <div class="nav-inner">
       <div class="nav-logo lyout">
         <i class="logo-icon">logo</i>
       </div>
       <div class="nav-categories">
         <ul class="nav-list">
-          <li class="nav-item" v-for="item in navTitle" :key="item.id">
+          <li class="nav-item" v-for="(item, index) in navTitle" :key="item.id" @mouseover="showNavSheet(index)">
             <a href="javascript:;">{{item.name}}</a>
             <div class="line"></div>
           </li>
@@ -14,18 +16,42 @@
       </div>
     </div>
     <div class="nav-top-sheet">
-      <div class="nav-top-inner">
+      <!-- 产品 -->
+      <!-- <transition name="fade" mode="out-in"> -->
+        <div class="nav-top-inner" v-show="NavSheetFlag && navIndex == 0">
+          <div class="nav-dropdown-menu-all">
+            <div class="menu-list-all">
+              <div class="menu-list-col" v-for="v in product" :key="v.id">
+                <div class="menu-area" v-for="menu in v.col" :key="menu.id">
+                  <div class="menu-area-title">
+                    <h3>{{menu.name}}</h3>
+                  </div>
+                  <div class="menu-area-content">
+                    <div class="menu-item" v-for="item in menu.items" :key="item.id">
+                      <div class="menu-item-title">
+                        <a href="javascript:;">{{item.name}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </transition> -->
+      <!-- 解决方案 -->
+      <div class="nav-top-inner" v-show="NavSheetFlag && navIndex == 1">
         <div class="nav-dropdown-menu-all">
           <div class="menu-list-all">
-            <div class="menu-list-col">
-              <div class="menu-area">
+            <div class="menu-list-col" v-for="v in solution" :key="v.id">
+              <div class="menu-area" v-for="menu in v.col" :key="menu.id">
                 <div class="menu-area-title">
-                  <h3>计算</h3>
+                  <h3>{{menu.name}}</h3>
                 </div>
                 <div class="menu-area-content">
-                  <div class="menu-item">
+                  <div class="menu-item" v-for="item in menu.items" :key="item.id">
                     <div class="menu-item-title">
-                      <a href="">云服务器</a>
+                      <a href="javascript:;">{{item.name}}</a>
                     </div>
                   </div>
                 </div>
@@ -39,20 +65,33 @@
 </template>
 
 <script type="ecmascript-6">
-import { navTitle } from 'common/js/data-nav'
+import { navTitle, product, solution } from 'common/js/data-nav'
 export default {
   data() {
     return {
+      NavSheetFlag: false,
+      navIndex: null
     }
   },
   created() {
     this.navTitle = navTitle
+    this.product = product
+    this.solution = solution
+  },
+  methods: {
+    showNavSheet(index) {
+      this.navIndex = index
+    },
+    hideNavSheet(index) {
+      this.navIndex = index
+    }
   }
 }
 </script>
 
-<style lang="scss">
-@import "~common/scss/element-variables";
+ <style lang="scss">
+// @import "~common/scss/element-variables";
+@import "~element-ui/packages/theme-chalk/src/common/var";
 $nav-inner-height: 65px;
 
 .navigation-bar {
@@ -131,7 +170,8 @@ $nav-inner-height: 65px;
   .nav-top-sheet {
     position: absolute;
     top: $nav-inner-height;
-    padding: 0px 10px 10px 10px;
+    padding: 0px 10px 10px 0px;
+    left: 10px;
     .nav-top-inner {
       width: 100%;
       background-color: #fff;
@@ -197,4 +237,11 @@ $nav-inner-height: 65px;
     }
   }
 }
+// .fade-enter-active, .fade-leave-active {
+//   transition: all .4s;
+// }
+// .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+//   opacity: 0;
+//   // height: 0px;
+// }
 </style>
