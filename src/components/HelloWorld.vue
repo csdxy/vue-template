@@ -28,7 +28,7 @@
   </div>
 </template>
 
-<script type='esmascript-6'>
+<script>
 import { getXmlData, getJsonpData } from 'api/data'
 import { ERR_OK } from 'api/config'
 import { mapGetters, mapMutations } from 'vuex'
@@ -89,7 +89,7 @@ export default {
 </script>
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
-<style scoped lang='scss'>
+<style lang='scss'>
 .section{
   background: #f7f8fa;
   .section-inner{

@@ -1,27 +1,49 @@
 <template>
   <div class="navigation-bar"
-  @mouseover="NavSheetFlag = true"
-  @mouseout="NavSheetFlag = false">
-    <div class="nav-inner">
-      <div class="nav-logo lyout">
-        <i class="logo-icon">logo</i>
+    @mouseover="NavSheetFlag = true"
+    @mouseout="NavSheetFlag = false">
+      <div class="nav-inner">
+        <div class="nav-logo lyout">
+          <i class="logo-icon">logo</i>
+        </div>
+        <div class="nav-categories">
+          <ul class="nav-list">
+            <li class="nav-item" v-for="(item, index) in navTitle" :key="item.id" @mouseover="showNavSheet(index)">
+              <a href="javascript:;">{{item.name}}</a>
+              <div class="line"></div>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="nav-categories">
-        <ul class="nav-list">
-          <li class="nav-item" v-for="(item, index) in navTitle" :key="item.id" @mouseover="showNavSheet(index)">
-            <a href="javascript:;">{{item.name}}</a>
-            <div class="line"></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="nav-top-sheet">
-      <!-- 产品 -->
-      <!-- <transition name="fade" mode="out-in"> -->
-        <div class="nav-top-inner" v-show="NavSheetFlag && navIndex == 0">
+      <div class="nav-top-sheet">
+        <!-- 产品 -->
+        <!-- <transition name="fade" mode="out-in"> -->
+          <div class="nav-top-inner" v-show="NavSheetFlag && navIndex == 0">
+            <div class="nav-dropdown-menu-all">
+              <div class="menu-list-all">
+                <div class="menu-list-col" v-for="v in product" :key="v.id">
+                  <div class="menu-area" v-for="menu in v.col" :key="menu.id">
+                    <div class="menu-area-title">
+                      <h3>{{menu.name}}</h3>
+                    </div>
+                    <div class="menu-area-content">
+                      <div class="menu-item" v-for="item in menu.items" :key="item.id">
+                        <div class="menu-item-title">
+                          <a href="javascript:;">{{item.name}}</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- </transition> -->
+        <!-- 解决方案 -->
+        <div class="nav-top-inner" v-show="NavSheetFlag && navIndex == 1">
           <div class="nav-dropdown-menu-all">
             <div class="menu-list-all">
-              <div class="menu-list-col" v-for="v in product" :key="v.id">
+              <div class="menu-list-col" v-for="v in solution" :key="v.id">
                 <div class="menu-area" v-for="menu in v.col" :key="menu.id">
                   <div class="menu-area-title">
                     <h3>{{menu.name}}</h3>
@@ -38,30 +60,8 @@
             </div>
           </div>
         </div>
-      <!-- </transition> -->
-      <!-- 解决方案 -->
-      <div class="nav-top-inner" v-show="NavSheetFlag && navIndex == 1">
-        <div class="nav-dropdown-menu-all">
-          <div class="menu-list-all">
-            <div class="menu-list-col" v-for="v in solution" :key="v.id">
-              <div class="menu-area" v-for="menu in v.col" :key="menu.id">
-                <div class="menu-area-title">
-                  <h3>{{menu.name}}</h3>
-                </div>
-                <div class="menu-area-content">
-                  <div class="menu-item" v-for="item in menu.items" :key="item.id">
-                    <div class="menu-item-title">
-                      <a href="javascript:;">{{item.name}}</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script type="ecmascript-6">
@@ -89,7 +89,7 @@ export default {
 }
 </script>
 
- <style lang="scss">
+<style lang="scss">
 @import "~common/scss/element-variables";
 $nav-inner-height: 65px;
 

@@ -7,7 +7,7 @@
     arrow="never">
       <el-carousel-item v-for="item in imgurls" :key="item">
         <img :src="item">
-        <div class="des">ewrw但是范德萨发斯蒂芬第三方发的所发生的丰富的erewr</div>
+        <div class="des"></div>
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -32,7 +32,6 @@ export default {
 
 <style lang="scss">
 .el-carousel__item {
-  // background-color: #d3dce6;
   img {
     width: 100%;
     height: 100%;
@@ -42,5 +41,9 @@ export default {
     top: 0px;
     left: 0px;
   }
+}
+.el-carousel__button {
+  height: 3px;
+  width: 30px;
 }
 </style>
