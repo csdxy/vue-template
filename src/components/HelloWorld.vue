@@ -2,18 +2,29 @@
   <div class='hello'>
     <navagation-bar></navagation-bar>
     <carousel></carousel>
-    <!-- <h2>xml数据</h2>
-    <ul v-for='item in xmlData' :key='item.id'>
-      <li>{{item.name}}</li>
-    </ul>
-    <h2>jsonp数据</h2>
-    <ul v-for='item in jsonpData' :key='item.id'>
-      <li>{{item.name}}</li>
-    </ul>
-    <h2>store数据</h2>
-    <ul v-for='item in data' :key='item.id'>
-      <li>{{item.name}}</li>
-    </ul> -->
+    <div class="section">
+      <div class="section-inner">
+        <ul class="list clearfix">
+          <li class="item">
+            <h3>五折普惠</h3>
+            <p class="item-content">新老用户认证即享，云服务器、云数据购买时长越长越优惠，五折上云</p>
+          </li>
+          <li class="item">
+            <h3>五折普惠</h3>
+            <p class="item-content">新老用户认证即享，云服务器、云数据购买时长越长越优惠，五折上云</p>
+          </li>
+          <li class="item">
+            <h3>五折普惠</h3>
+            <p class="item-content">新老用户认证即享，云服务器、云数据购买时长越长越优惠，五折上云</p>
+          </li>
+          <li class="item">
+            <h3>五折普惠</h3>
+            <p class="item-content">新老用户认证即享，云服务器、云数据购买时长越长越优惠，五折上云</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -79,5 +90,34 @@ export default {
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped lang='scss'>
+.section{
+  background: #f7f8fa;
+  .section-inner{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+}
+.list{
+  position: relative;
+  width: 100%;
+  .item{
+    float: left;
+    padding: 30px 20px;
+    width: 25%;
+    height: 140px;
+    box-sizing: border-box;
+    border-right: 1px solid #dadee4;
+    &:last-child{
+      border-right: 1px solid transparent;
+    }
+    .item-content{
+      margin-top: 10px;
+      color: #666;
+    }
+  }
+}
 
 </style>

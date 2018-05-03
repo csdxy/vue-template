@@ -36,6 +36,8 @@
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
+    "element-theme": "^2.0.1",
+    "element-theme-chalk": "^2.3.7",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
@@ -50,7 +52,7 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
     "node-notifier": "^5.1.2",
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.9.0",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
     "portfinder": "^1.0.13",
@@ -79,5 +81,11 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "element-theme": {
+    "out": "./src/common/theme",
+    "config": "./src/common/scss/_element-variables.scss",
+    "theme": "element-theme-chalk",
+    "minimize": false
+  }
 }

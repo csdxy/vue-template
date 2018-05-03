@@ -1,10 +1,8 @@
-@import "~element-ui/packages/theme-chalk/src/common/var";
-
 body {
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   font-weight: 400;
-  font-size: $--font-size-base;
-  color: $--color-black;
+  font-size: 14px;
+  color: #000;
   -webkit-font-smoothing: antialiased; // 字体抗锯齿渲染
   -moz-osx-font-smoothing: grayscale; // 字体抗锯齿渲染
   -webkit-tap-highlight-color: transparent;
@@ -21,13 +19,13 @@ code, kbd, pre, samp {
   font-family: courier new, courier, monospace;
 }
 small {
-  font-size: #{$--font-size-base - 2px};
+  font-size: 16px;
 }
 ol,ul {
   list-style: none;
 }
 sup, sub {
-  font-size: #{$--font-size-base - 1px};
+  font-size: 15px;
 }
 sup {
   vertical-align: text-top;
@@ -36,7 +34,7 @@ sub {
   vertical-align: text-bottom;
 }
 legend {
-  color: $--color-black;
+  color: #000;
 }
 fieldset,
 img {
@@ -52,29 +50,17 @@ table {
 button {
   border-radius: 0;
 }
-a {
-  color: $--color-primary;
-  text-decoration: none;
-  &:hover,
-  &:focus {
-    color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
-  }
-  &:active {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-  }
-}
 h1, h2, h3, h4, h5, h6 {
-  color: $--color-text-regular;
   font-weight: normal;
 }
 h1 {
-  font-size: #{$--font-size-base + 6px};
+  font-size: 20px;
 }
 h2 {
-  font-size: #{$--font-size-base + 4px};
+  font-size: 18px;
 }
 h3 {
-  font-size: #{$--font-size-base + 2px};
+  font-size: 16px;
 }
 h4, h5, h6, p {
   font-size: inherit;

@@ -90,8 +90,7 @@ export default {
 </script>
 
  <style lang="scss">
-// @import "~common/scss/element-variables";
-@import "~element-ui/packages/theme-chalk/src/common/var";
+@import "~common/scss/element-variables";
 $nav-inner-height: 65px;
 
 .navigation-bar {
